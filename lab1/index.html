@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 1</title>
+
+    <style>
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+}
+        .me{
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .contacts{
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            justify-content: center;
+        }
+        .nav_list {
+            list-style: none; 
+            display: flex;
+            gap: 15px; 
+            padding: 20px; 
+            justify-content: center;
+            background-color: #333;
+        }
+
+        .nav_list li {
+            display: inline-block; 
+        }
+
+        .nav_list a {
+            text-decoration: none; 
+            color: #fff; 
+            background-color: #333; 
+            padding: 10px 20px; 
+            border-radius: 25px; 
+            font-family: Arial, sans-serif; 
+            font-size: 16px; /* Размер шрифта */
+            transition: background-color 0.3s, transform 0.2s; 
+            display: block; 
+        }
+
+        .nav_list a:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+
+        .nav_list a:active {
+            background-color: #222;
+            transform: scale(0.95); 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Nurbekov Beksultan</h2>
+        <span>ИСТдот-1-23</span>
+    </header>
+    <nav>
+    <ul class="nav_list">
+        <li><a href="#aboutme">About me</a></li>
+        <li><a href="#resume">Портфолио</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+    </ul>
+        
+    </nav>
+    <main>
+        <div class="container">
+            <div class="me">
+                <section class="profile">
+                    <img src="me.png" alt="me in style Ghibi" 
+                    style="height: 300px;
+                           width: 300px;
+                           padding-left: 100px;
+                           padding-top: 50px;">
+                    </section>
+        
+                    <section id="aboutme" class="aboutme" style="
+                                                                width: 500px;
+                                                                height: 300px;
+                                                                text-align: center;
+                                                                padding-left: 150px;
+                                                                padding-top: 50px;">
+                        <h2>About me</h2>
+                        <h3 class="features__title">I'm <b>Beksultan Nurbekov</b> I'm <b>20</b> years old</h2>
+                        <p class="features__info">My name is Beksultan Nurbekov and I am a backend developer of the software development department at KSTU named after I. Razzakov.</p>    
+                        <h3>I hate writing frontend</h3>
+
+                        <p>I'm studied at the Polytechnic College of KSTU named after name I. Razzakov.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, ipsa a libero laboriosam delectus aut esse quisquam earum deserunt fugiat voluptatum. Eos libero et voluptatibus perspiciatis explicabo nesciunt porro officia.</p>
+                    </section>
+            </div>
+
+            <section id="resume" class="resume">
+                <h2>Портфолио</h2>
+                    <ul><a href="http://unet.kstu.kg/">UNET</a> - University system</ul>
+                    <ul><a href="http://zakupki.kstu.kg/">zakupki</a> - Procurement system for KSTU</ul>  
+            </section>
+            
+            <section id="contacts" class="contacts">
+                <p>Email: beksultannurbekov0@gmail.com</p>
+                <a href="https://www.linkedin.com/in/beksultan-nurbekov-33a709310/"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="linkedin" width="50px" height="50px"></a>
+                <a href="https://github.com/rea-toi/"> <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="github" width="50px" height="50px"></a>
+            </section>    
+        </div>
+
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ваш Сайт. Все права защищены.</p>
+        </footer>
+</body>
+</html>
