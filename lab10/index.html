@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="runCallback">Выполнить функцию с callback</button>
+
+<div id="output"></div>
+<script>
+function showFullName() {
+    console.log("Полное имя: " + this.firstName + " " + this.lastName);
+    }
+const person = { firstName: "Алексей", lastName: "Иванов" };
+showFullName.call(person)
+function findMax() {
+console.log("Максимальное число: " + Math.max.apply(null, arguments));
+}
+const numbers = [5, 12, 8, 130, 44];
+findMax.apply(null, numbers)
+
+const calculator = {
+    sum(a, b) {
+        return a + b;
+    }
+};
+const addFive = calculator.sum.bind(null, 5);
+console.log(addFive(10));
+
+
+const user = {
+    name: "Мария",
+    age: 28
+};
+function introduceYourself(city) {
+    console.log("Меня зовут " + this.name + ", мне " + this.age + " лет, я живу в городе "
+    + city);
+}
+introduceYourself.call(user, "Bishkek")
+introduceYourself.apply(user, ["Bishkek"])
+const boundIntroduce = introduceYourself.bind(user, "Bishkek")
+boundIntroduce();
+
+</script>
+
+
+
+</body>
+</html>

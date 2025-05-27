@@ -94,7 +94,6 @@
     }
 </script>
 
-
 <button id="btnShowText">Показать текст</button>
 <button id="btnCalculate">Вычислить сумму</button>
 
@@ -115,6 +114,23 @@
   document.getElementById('btnCalculate').addEventListener('click', function() {
     const sum = calculateSum(5, 7);
     displayText(`Сумма чисел 5 и 7 равна ${sum}`);
+  });
+</script>
+
+<button id="runCallback">Выполнить функцию с callback</button>
+
+<div id="output"></div>
+
+<script>
+  function processData(callback) {
+    const data = "Привет из processData!"; 
+    callback(data);
+  }
+  function displayData(data) {
+    document.getElementById('output').textContent = `Полученные данные: ${data}`;
+  }
+  document.getElementById('runCallback').addEventListener('click', function() {
+    processData(displayData);
   });
 </script>
 </body>
