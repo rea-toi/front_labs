@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лабораторная работа: Таблицы и формы</title>
+<style>
+/* Стилизация таблицы */
+table {
+width: 100%;
+border-collapse: collapse;
+}
+th, td {
+border: 1px solid green;
+padding: 10px;
+text-align: center;
+font-family: 'Times New Roman', Times, serif;
+}
+th {
+background-color: #f4f4f4;
+font-weight: bold;
+}
+th:nth-child(3),td:nth-child(3){
+    background-color: yellow;
+    color: blue;
+}
+tr:nth-child(even) {
+background-color: #f9f9f9;
+}
+tr:nth-child(odd) {
+background-color: #fff;
+}
+/* Стилизация формы */
+form {
+margin-top: 20px;
+max-width: 400px;
+}
+label {
+display: block;
+
+margin-bottom: 10px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+width: 100%;
+padding: 8px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+input[type="checkbox"],
+input[type="radio"] {
+margin-right: 5px;
+}
+button {
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+button:hover {
+background-color: #45a049;
+}
+</style>
+</head>
+<body>
+<h1>Таблица и форма</h1>
+<h2>Пример таблицы</h2>
+<table>
+<tr>
+<th>Фамилия</th>
+<th>Имя</th>
+<th>Возраст</th>
+<th>Фото</th>
+</tr>
+<tr>
+<td>Иванов</td>
+
+<td>Иван</td>
+<td>25</td>
+<td><img src="photo.png" alt="" style="width: 70px;"></td>
+</tr>
+<tr>
+<td>Петров</td>
+<td>Петр</td>
+<td>30</td>
+<td><img src="photo.png" alt="" style="width: 70px;"></td>
+</tr>
+<tr>
+<td>Сидоров</td>
+<td>Сидор</td>
+<td>28</td>
+<td><img src="photo.png" alt="" style="width: 70px;"></td>
+</tr>
+</table>
+<h2>Пример формы</h2>
+<form action="#" method="POST">
+<label for="name">Имя:</label>
+<input type="text" id="name" name="name" required>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+<label for="password">Пароль:</label>
+<input type="password" id="password" name="password" required>
+<label for="country">Страна:</label>
+<select id="country" name="country">
+<option value="ru">Кыргызстан</option>
+<option value="ua">Казакстан</option>
+<option value="by">Узбекстан</option>
+</select>
+<label>Интересы:</label>
+<input type="checkbox" name="interest" value="sports"> Спорт
+<input type="checkbox" name="interest" value="music"> Музыка
+<input type="checkbox" name="interest" value="books"> Книги
+<label>Пол:</label>
+<input type="radio" name="gender" value="male" checked> Мужчина
+<input type="radio" name="gender" value="female"> Женщина
+<button type="submit">Отправить</button>
+</form>
+</body>
+
+</html>

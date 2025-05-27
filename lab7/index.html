@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Практическая работа по JavaScript</title>
+</head>
+<body>
+<h1>Приветствие пользователя</h1>
+<input type="number" id="nameInput" placeholder="Введите ваш возраст">
+<button>Отправить</button>
+<p id="greetingMessage"></p>
+<script>
+document.querySelector('button').addEventListener('click', function() {
+const age = document.querySelector('#nameInput').value;
+if (age < 18) {
+document.querySelector('#greetingMessage').textContent = "Вы слишком молоды";
+} else if ((age > 18) && (age < 65)) {
+document.querySelector('#greetingMessage').textContent = "Добро пожаловать";}
+else if (age>65){
+    document.querySelector('#greetingMessage').textContent = "Пора на пенсию";
+}
+else{
+    document.querySelector('#greetingMessage').textContent = "неверный ввод возраста";
+}
+}
+);
+</script>
+
+<h2>Математические вычисления</h2>
+    <div>
+        <input type="number" id="num1" placeholder="Число 1" required>
+        <input type="number" id="num2" placeholder="Число 2" required>
+    </div>
+    <div>
+        <button onclick="calculate('add')">Сложить</button>
+        <button onclick="calculate('subtract')">Вычесть</button>
+        <button onclick="calculate('multiply')">Умножить</button>
+        <button onclick="calculate('divide')">Делить</button>
+    </div>
+    <p id="result">Результат: </p>
+    <script>
+        function calculate(operation) {
+            // Получаем значения из полей ввода
+            const num1 = Number(document.getElementById('num1').value);
+            const num2 = Number(document.getElementById('num2').value);
+            const resultElement = document.getElementById('result');
+            let result;
+
+            // Проверка на корректность ввода (используем строгое сравнение для типов)
+            if (isNaN(num1) || isNaN(num2)) {
+                resultElement.textContent = "Ошибка: Введите корректные числа";
+                return;
+            }
+
+            // Выполняем арифметическую операцию
+            switch (operation) {
+                case 'add':
+                    result = num1 + num2;
+                    resultElement.textContent = `Результат: ${num1} + ${num2} = ${result}`;
+                    break;
+                case 'subtract':
+                    result = num1 - num2;
+                    resultElement.textContent = `Результат: ${num1} - ${num2} = ${result}`;
+                    break;
+                case 'multiply':
+                    result = num1 * num2;
+                    resultElement.textContent = `Результат: ${num1} × ${num2} = ${result}`;
+                    break;
+                case 'divide':
+                    if (num2 === 0) {
+                        resultElement.textContent = "Ошибка: Деление на ноль невозможно";
+                        return;
+                    }
+                    result = num1 / num2;
+                    resultElement.textContent = `Результат: ${num1} ÷ ${num2} = ${result}`;
+                    break;
+                default:
+                    resultElement.textContent = "Ошибка: Неизвестная операция";
+                }
+            }
+        </script>
+
+<div class="calendar">
+    <h2>Текущая дата</h2>
+    <p id="currentDate"></p>
+</div>
+
+<script>
+    function displayDate() {
+        const today = new Date();
+        const day = String(today.getDate()).padStart(2, '0'); 
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const year = today.getFullYear();
+        const formattedDate = `${day}.${month}.${year}`;
+        document.getElementById('currentDate').textContent = formattedDate;
+    }    
+    window.onload = displayDate;
+</script>
+
+
+<input type="number" id="number" placeholder="Введите число">
+<button id="send_factorial">Отправить</button>
+<p id="factorial"></p>
+<script>
+    let result = 1
+    document.querySelector('#send_factorial').addEventListener('click', function() {
+        const factorialElement = document.querySelector('#factorial');
+        const number = document.querySelector('#number').value;
+        if (isNaN(number) || number < 0) {
+                factorialElement.textContent = "Ошибка: Введите неотрицательное число";
+                return;
+            }
+
+        result = 1;
+        if (number === 0 || number === 1) {
+                result = 1; 
+            } else {
+                for (let i = 2; i <= number; i++) {
+                    result *= i;
+                }
+            }
+        factorialElement.textContent = `Факториал ${number}! = ${result}`;
+    });
+</script>
+</body>
+</html>

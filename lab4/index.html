@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лабораторная работа: Псевдоклассы и псевдоэлементы</title>
+<style>
+a:hover {
+color: red;
+background-color: black;
+}
+a:visited {
+    color: green;
+    background-color: aqua;
+}
+a:active{
+    color: greenyellow;
+    background-color: brown;
+}
+/* a:link {
+color: chocolate;
+background-color: chartreuse; */
+/* } */
+a::before {
+/* content: "🔗"; */
+margin-right: 5px;
+}
+tr:first-child {
+background-color: lightblue;
+}
+tr:last-child {
+background-color: lightgreen;
+}
+tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+tr:nth-child(odd) {
+background-color: #ffffff;
+}
+input:focus {
+border-color: green;
+}
+p:first-of-type::first-letter {
+font-size: 2em;
+color: blue;
+}
+h1:first-of-type::first-letter, h2:first-of-type::first-letter, h3:first-of-type::first-letter {
+    font-size: 24px;
+    color: green;
+}
+.first-paragraph::first-line {
+    font-style: italic;
+}
+.special-paragraph::before {
+    content: "★ ";
+    color: gold;
+}
+.special-paragraph::after {
+    content: " ★";
+    color: gold;
+}
+::selection {
+    background-color: black;
+    color: #e5e5e5;
+}
+</style>
+</head>
+<body>
+<h1>Пример использования псевдоклассов и псевдоэлементов</h1>
+<p class="first-paragraph">Первый параграф с первой буквой, которую нужно стилизовать.</p>
+<p>Второй параграф на странице.</p>
+<p class="special-paragraph">Последний параграф на странице.</p>
+<a href="#">Ссылка 1</a>
+<a href="#">Ссылка 2</a>
+<a href="#">Ссылка 3</a>
+<h2>Таблица</h2>
+<table border="1">
+<tr>
+<th>Заголовок 1</th>
+<th>Заголовок 2</th>
+</tr>
+<tr>
+<td>Строка 1</td>
+<td>Строка 2</td>
+
+</tr>
+<tr>
+<td>Строка 3</td>
+<td>Строка 4</td>
+</tr>
+</table>
+<h3>Форма</h3>
+<form>
+<label for="name">Имя:</label>
+<input type="text" id="name" name="name">
+</form>
+</body>
+</html>

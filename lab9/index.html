@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Конвертация валют</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h2>Конвертер валют</h2>
+
+<label for="amount">Сумма в долларах ($):</label><br>
+<input type="number" id="amount" placeholder="Введите сумму"><br>
+
+<label for="rate">Курс доллара к сому:</label><br>
+<input type="number" id="rate" placeholder="Например: 89.5"><br>
+
+<button onclick="convertCurrency()">Конвертировать</button>
+
+<p id="result"></p>
+
+<script>
+  function convertCurrency() {
+    const amount = parseFloat(document.getElementById('amount').value);
+    const rate = parseFloat(document.getElementById('rate').value);
+    const result = document.getElementById('result');
+
+    if (isNaN(amount) || isNaN(rate) || amount <= 0 || rate <= 0) {
+      result.textContent = 'Пожалуйста, введите корректные значения.';
+      return;
+    }
+
+    const converted = amount * rate;
+    result.textContent = `Результат: ${converted.toFixed(2)} c`;
+  }
+</script>
+
+
+
+<input type="number" id="num1" placeholder="Число 1">
+<input type="number" id="num2" placeholder="Число 2"><br>
+
+<button onclick="add()">Сложить</button>
+<button onclick="subtract()">Вычесть</button>
+<button onclick="multiply()">Умножить</button>
+<button onclick="divide()">Делить</button>
+
+<p id="result"></p>
+<script>
+    function getInputs() {
+        const num1 = parseFloat(document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById('num2').value);
+        if (isNaN(num1) || isNaN(num2)) {
+        showResult('Пожалуйста, введите оба числа.');
+        return null;
+        }
+        return { num1, num2 };
+    }
+
+    function showResult(message) {
+        document.getElementById('result').textContent = message;
+    }
+
+    function add() {
+        const inputs = getInputs();
+        if (!inputs) return;
+        const result = inputs.num1 + inputs.num2;
+        showResult(`Результат: ${result}`);
+    }
+
+    function subtract() {
+        const inputs = getInputs();
+        if (!inputs) return;
+        const result = inputs.num1 - inputs.num2;
+        showResult(`Результат: ${result}`);
+    }
+
+    function multiply() {
+        const inputs = getInputs();
+        if (!inputs) return;
+        const result = inputs.num1 * inputs.num2;
+        showResult(`Результат: ${result}`);
+    }
+
+    function divide() {
+        const inputs = getInputs();
+        if (!inputs) return;
+        if (inputs.num2 === 0) {
+        showResult('Ошибка: деление на ноль!');
+        return;
+        }
+        const result = inputs.num1 / inputs.num2;
+        showResult(`Результат: ${result}`);
+    }
+</script>
+
+
+<button id="btnShowText">Показать текст</button>
+<button id="btnCalculate">Вычислить сумму</button>
+
+<div id="output"></div>
+
+<script>
+  function displayText(text) {
+    const output = document.getElementById('output');
+    output.textContent = text;
+  }
+  function handleButtonClick() {
+    displayText("Вы нажали кнопку!");
+  }
+  function calculateSum(a, b) {
+    return a + b;
+  }
+  document.getElementById('btnShowText').addEventListener('click', handleButtonClick);
+  document.getElementById('btnCalculate').addEventListener('click', function() {
+    const sum = calculateSum(5, 7);
+    displayText(`Сумма чисел 5 и 7 равна ${sum}`);
+  });
+</script>
+</body>
+</html>
